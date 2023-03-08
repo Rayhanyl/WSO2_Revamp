@@ -240,7 +240,6 @@ class ManagekeysController extends Controller
             ];
     
             $additional = (object) $additional;
-    
             $payloads = [
                 'validityPeriod' => $period,
                 'additionalProperties' => $additional,

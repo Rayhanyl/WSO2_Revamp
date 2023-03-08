@@ -713,8 +713,6 @@
             let httpreferrers = [];
             let ipaddresses = [];
 
-            console.log(ipaddresses);
-
             $('.permitip').each(function(i, obj) {
                 ipaddresses.push($(this).html());
             });

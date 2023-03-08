@@ -619,13 +619,16 @@
             reset();
         });
         $('#infinitevalidity').on('click',function(){
-            reset();
+            resetvalidity();
         });
+
+        function resetvalidity(){
+            $('#validityPeriod').val('');
+        }
 
         function reset(){
             $('.boxaddress').html('');
             $('#addip').val('');
-            $('#validityPeriod').val('');
             $('.boxhttp').html('');
             $('#addhttp').val('');
         }
@@ -725,8 +728,6 @@
         $(document).on('submit','#form-apikeys', function(e){
             let httpreferrers = [];
             let ipaddresses = [];
-
-            console.log(ipaddresses);
 
             $('.permitip').each(function(i, obj) {
                 ipaddresses.push($(this).html());
