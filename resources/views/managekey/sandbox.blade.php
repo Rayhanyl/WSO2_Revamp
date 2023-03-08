@@ -432,6 +432,7 @@
                         <small>Above token has a validity period of seconds.</small>
                     </div>
                     <button class="btn btn-success" onclick="copyApikey()">Copy To clipboard</button>
+                    <button onClick="buttonPress()">➡️ Copy Message to Clipboard</button>
                 </div>
             </div>
             <div class="modal-footer">
@@ -580,12 +581,9 @@
 
     function copyTokenEndpoint() {
         var copyText = document.getElementById("tokenendpoint");
-
         copyText.select();
         copyText.setSelectionRange(0, 99999); // For mobile devices
-
         navigator.clipboard.writeText(copyText.value);
-
         Swal.fire(
             'Already Copied',
             '',
@@ -767,23 +765,57 @@
 
         // Copy text APIKEY
         function copyApikey() {
-            // Get the text field
             var copyText = document.getElementById("text-apikey");
-
-            // Select the text field
             copyText.select();
-            copyText.setSelectionRange(0, 99999); // For mobile devices
-
-            // Copy the text inside the text field
+            copyText.setSelectionRange(0, 99999);
             navigator.clipboard.writeText(copyText.value);
-            // if(copyText.value.length > 10) copyText.value = copyText.value.substring(0,20);
-
             Swal.fire(
             'Already Copied',
             '',
             'success'
             )
         }
+
+        const unsecuredCopyToClipboard = (text) => { 
+            const textArea = document.createElement("textarea"); 
+            textArea.value=text; 
+            document.body.appendChild(textArea);                 
+            textArea.focus();
+            textArea.select(); 
+            try
+                {
+                document.execCommand('copy')
+                }catch(err){
+                    Swal.fire(
+                    'Error',
+                    '',
+                    'warning'
+                    )
+                }
+        document.body.removeChild(textArea)};
+
+        const copyToClipboard = (content) => {
+            if (window.isSecureContext && navigator.clipboard) {
+                navigator.clipboard.writeText(content);
+                Swal.fire(
+                'Already Copied',
+                '',
+                'success'
+                )  
+            } else {
+                unsecuredCopyToClipboard(content);
+                Swal.fire(
+                'Already Copied',
+                '',
+                'success'
+                )  
+            }
+        };
+        var copyText = document.getElementById("text-apikey");
+        
+        const buttonPress = () => { 
+            copyToClipboard(copyText.value);   
+    };
 
 </script>
 @endpush

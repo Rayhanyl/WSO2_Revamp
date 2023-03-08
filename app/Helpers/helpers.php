@@ -42,11 +42,11 @@ function getUrlLogin()
 function getUrl($url)
 {
     $response = Http::withOptions(['verify' => false])
-        ->withHeaders([
-            'Authorization' => 'Bearer '.session()->get('token'),
-            'Accept' => 'application/json',
-        ])
-        ->get($url);
+    ->withHeaders([
+        'Authorization' => 'Bearer '.session()->get('token'),
+        'Accept' => 'application/json',
+    ])
+    ->get($url);
     if($response->status() == 200){
         return json_decode($response->getBody()->getContents());
     }
@@ -55,13 +55,13 @@ function getUrl($url)
 
 function getUrlmail($url)
 {
-        $response = Http::withBasicAuth('admin', 'admin')
-        ->withOptions(['verify' => false])
-        ->withHeaders([
-            'Authorization' => 'Basic YWRtaW46YWRtaW4=',
-            'Accept' => 'application/json',
-        ])
-        ->get($url);
+    $response = Http::withBasicAuth('admin', 'admin')
+    ->withOptions(['verify' => false])
+    ->withHeaders([
+        'Authorization' => 'Basic YWRtaW46YWRtaW4=',
+        'Accept' => 'application/json',
+    ])
+    ->get($url);
     if($response->status() == 200){
         return json_decode($response->getBody()->getContents());
     }

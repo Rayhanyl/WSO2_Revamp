@@ -47,7 +47,7 @@ class SendMailController extends Controller
             "name" => $user['http://wso2.org/claims/username'],
             "date" => Carbon::now(),
             "code" => $data,
-            "url" => 'http://127.0.0.1:8000/',
+            "url" => 'http://194.233.88.81/WSO2_Revamp/public/',
         ];
 
         Mail::to($user['http://wso2.org/claims/emailaddress'])->send(new Email($mailData));

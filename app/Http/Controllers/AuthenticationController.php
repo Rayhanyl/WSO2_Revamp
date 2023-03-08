@@ -8,6 +8,8 @@ use App\Http\Requests\ConfirmPasswordRequest;
 
 class AuthenticationController extends Controller
 {
+    public $url,$url_regis,$url_login,$url_email;
+
     public function __construct(){
         $this->url = getUrlApi();
         $this->url_regis = getUrlRegis();
@@ -23,6 +25,7 @@ class AuthenticationController extends Controller
 
         $username = base64_encode($request->username);
         $userinfo =  getUrlmail($this->url_email .'/pi-info/'. $username);
+        // $userinfo =  getUrlmail('https://194.233.88.81:9443/t/carbon.super/api/identity/user/v1.0/pi-info/'. $username);
         $user = (array) $userinfo->basic;
 
         $validator = Validator::make($request->all(), [
