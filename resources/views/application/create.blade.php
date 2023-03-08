@@ -1,0 +1,148 @@
+@extends('app')
+@section('content')
+
+<div class="content-wrapper container">
+    <div class="page-heading">
+        <h3>Create Application <i class="bi bi-pc-display-horizontal"></i></h3>
+    </div>
+    <div class="page-content">
+        <section id="application">
+            {{-- <div class="row" id="list-application">
+                <div class="col-12" data-aos="fade-right" data-aos-duration="2000">
+                    <div class="card">
+                        <div class="card-body">
+                            <form class="form row g-3" action="{{ route ('storeapplication') }}" method="POST">
+                                @csrf
+                                <div class="col-12 col-md-6 @error('appname') is-invalid @enderror">
+                                    <label for="appname" class="form-label">Application Name</label>
+                                    <input type="text" class="form-control" id="appname" name="appname" required>
+                                    <div id="appname" class="form-text">Enter a name to identify the Application. You will be able to pick this application when subscribing to APIs.</div>
+                                    @error('appname')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="col-12 col-md-6 @error('shared') is-invalid @enderror">
+                                    <label for="shared" class="form-label">Shared Quota</label>
+                                    <select class="form-select" aria-label="Choice Shared Quota" id="shared" name="shared" required>
+                                        <option selected disabled>-- Select --</option>
+                                        @foreach ($data->list as $item)
+                                        <option value="{{$item->name}}" data-toggle="tooltip" data-placement="top"
+                                            title="{{$item->description}}">{{$item->name}}</option>
+                                        @endforeach
+                                    </select>
+                                    <div id="shared" class="form-text">Assign API request quota per access token. Allocated quota will be shared among all the subscribed APIs of the application.</div>
+                                    @error('shared')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="col-12 @error('description') is-invalid @enderror">
+                                    <label for="description" class="form-label">Description</label>
+                                    <textarea class="form-control" maxlength='512' id="description" rows="3" name="description"></textarea>
+                                    <div id="description" class="form-text">
+                                        Maximum character 512.
+                                        <div id="the-count">
+                                            <span id="current">0</span>
+                                            <span id="maximum">/ 512</span>
+                                        </div>
+                                    </div>
+
+                                    @error('description')
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>    
+                                <div class="col-12 d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-primary me-1 mb-1">Create</button>
+                                    <a href="{{ route ('application') }}" class="btn btn-light-secondary me-1 mb-1">Cancel</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div> --}}
+            <div class="container" id="list-application">
+                <div class="card" data-aos="flip-right" data-aos-duration="600">
+                    <div class="card-body bg-login">
+                        <div class="row">
+                            <div class="col-12 my-2">
+                                <a href="{{ route ('application') }}">
+                                    <h5>
+                                        <i class="bi bi-arrow-left-circle"></i> Back to Application
+                                    </h5>
+                                </a>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-6">
+                                <div class="card card-morp">
+                                    <div class="card-body">
+                                        <form class="form row g-3" action="{{ route ('storeapplication') }}" method="POST">
+                                            @csrf
+                                            <div class="col-12 col-md-6 @error('appname') is-invalid @enderror">
+                                                <label for="appname" class="form-label">Application Name</label>
+                                                <input type="text" class="form-control" id="appname" name="appname" required>
+                                                <div id="appname" class="form-text">Enter a name to identify the Application.</div>
+                                                @error('appname')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
+                                            </div>
+                                            <div class="col-12 col-md-6 @error('shared') is-invalid @enderror">
+                                                <label for="shared" class="form-label">Shared Quota</label>
+                                                <select class="form-select" aria-label="Choice Shared Quota" id="shared" name="shared" required>
+                                                    <option selected disabled>-- Select --</option>
+                                                    @foreach ($data->list as $item)
+                                                    <option value="{{$item->name}}" data-toggle="tooltip" data-placement="top"
+                                                        title="{{$item->description}}">{{$item->name}}</option>
+                                                    @endforeach
+                                                </select>
+                                                <div id="shared" class="form-text">Allocated quota will be shared among all the subscribed APIs of the application.</div>
+                                                @error('shared')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
+                                            </div>
+                                            <div class="col-12 @error('description') is-invalid @enderror">
+                                                <label for="description" class="form-label">Description</label>
+                                                <textarea class="form-control" maxlength='512' id="description" rows="3" name="description"></textarea>
+                                                <div id="description" class="form-text">
+                                                    Maximum character 512.
+                                                    <div id="the-count">
+                                                        <span id="current">0</span>
+                                                        <span id="maximum">/ 512</span>
+                                                    </div>
+                                                </div>
+            
+                                                @error('description')
+                                                <span class="text-danger">{{ $message }}</span>
+                                                @enderror
+                                            </div>    
+                                            <div class="col-12 d-flex justify-content-end">
+                                                <button type="submit" class="btn btn-primary me-1 mb-1">Create</button>
+                                                <a href="{{ route ('application') }}" class="btn btn-light-secondary me-1 mb-1">Cancel</a>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-6 text-center my-auto d-none d-md-block">
+                                <img class="w-75" src="{{ asset ('assets/images/samples/create-app.png') }}" alt="Hero Picture">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+@push('script')
+    <script>
+        $('textarea').keyup(function() {
+        
+            var characterCount = $(this).val().length,
+                current = $('#current'),
+                maximum = $('#maximum'),
+                theCount = $('#the-count');
+            
+            current.text(characterCount);
+            
+        });
+    </script>
+@endpush
+@endsection
