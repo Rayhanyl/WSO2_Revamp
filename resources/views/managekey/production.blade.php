@@ -438,7 +438,6 @@
             </div>
             <div class="modal-footer">
                 <button type="submit" class="btn btn-primary btn-apikeys" form="form-apikeys">
-
                     Generate
                 </button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -726,6 +725,8 @@
         $(document).on('submit','#form-apikeys', function(e){
             let httpreferrers = [];
             let ipaddresses = [];
+
+            console.log(ipaddresses);
 
             $('.permitip').each(function(i, obj) {
                 ipaddresses.push($(this).html());

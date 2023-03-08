@@ -306,7 +306,6 @@
     </div>
 </div>
 
-
 {{-- Modal --}}
 <div class="modal fade" id="generatecurl" tabindex="-1" aria-labelledby="generatecurlLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl">
@@ -713,6 +712,8 @@
         $(document).on('submit','#form-apikeys', function(e){
             let httpreferrers = [];
             let ipaddresses = [];
+
+            console.log(ipaddresses);
 
             $('.permitip').each(function(i, obj) {
                 ipaddresses.push($(this).html());
