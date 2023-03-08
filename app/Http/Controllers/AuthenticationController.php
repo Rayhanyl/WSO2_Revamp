@@ -12,7 +12,7 @@ class AuthenticationController extends Controller
         $this->url = getUrlApi();
         $this->url_regis = getUrlRegis();
         $this->url_login = getUrlLogin();
-        $this->url = getUrlEmail();
+        $this->url_email = getUrlEmail();
     }
 
     public function login(){
@@ -22,7 +22,7 @@ class AuthenticationController extends Controller
     public function authentication(Request $request){
 
         $username = base64_encode($request->username);
-        $userinfo =  getUrlmail($this->url .'/pi-info/'. $username);
+        $userinfo =  getUrlmail($this->url_email .'/pi-info/'. $username);
         $user = (array) $userinfo->basic;
 
         $validator = Validator::make($request->all(), [
