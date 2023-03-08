@@ -71,9 +71,5 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "repositories": {
-        "private-packagist": {
-            "type": "composer",
-            "url": "https://repo.packagist.com/postman-collection/"
-        }
     }
 }
