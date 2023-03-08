@@ -68,15 +68,15 @@
                                     </h5>
                                 </div>
                                 <div class="card-body">
-                                    <table class="table" id="listsubscribe">
+                                    <table class="table text-center" id="listsubscribe">
                                         <thead>
                                             <tr>
-                                                <th>#</th>
-                                                <th>API</th>
-                                                <th>Lifecycle State</th>
-                                                <th>Business Plan</th>
-                                                <th>Subscription Status</th>
-                                                <th>Action</th>
+                                                <th class="text-center">#</th>
+                                                <th class="text-center">API</th>
+                                                <th class="text-center">Lifecycle State</th>
+                                                <th class="text-center">Business Plan</th>
+                                                <th class="text-center">Subscription Status</th>
+                                                <th class="text-center">Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -90,7 +90,15 @@
                                                 <td>{{$items->apiInfo->name}} - {{$items->apiInfo->version}} </td>
                                                 <td>{{$items->apiInfo->lifeCycleStatus}}</td>
                                                 <td>{{$items->throttlingPolicy}}</td>
-                                                <td>{{$items->status}} </td>
+                                                <td>
+                                                    @if ($items->status == 'ON_HOLD')
+                                                        <p data-toggle="tooltip" data-placement="left" title="Waiting for approval from admin"> 
+                                                            {{$items->status}} 
+                                                        </p>
+                                                    @else
+                                                        {{$items->status}} 
+                                                    @endif
+                                                </td>
                                                 <td>
                                                     @if ($items->status == 'REJECTED')
                                                     <button type="button" class="btn btn-warning btn-edit-subs" data-subs-id="{{ $items->subscriptionId }}" disabled>
@@ -135,6 +143,9 @@
 
 @push('script')
     <script>
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();   
+        });
         var modal = new bootstrap.Modal(document.getElementById('subscription-modal'));
         var jqmodal = $('#subscription-modal');
         var loaderModal = $('#modalLoader');
