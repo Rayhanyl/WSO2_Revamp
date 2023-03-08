@@ -110,24 +110,32 @@
                                                     <button type="button" class="btn btn-warning btn-edit-subs" data-subs-id="{{ $items->subscriptionId }}" disabled>
                                                         <i class="bi bi-pencil-square"></i>
                                                     </button>
-                                                    @elseif($items->status == 'ON_HOLD')
-                                                    <button type="button" class="btn btn-warning btn-edit-subs" data-subs-id="{{ $items->subscriptionId }}" disabled>
-                                                        <i class="bi bi-pencil-square"></i>
-                                                    </button>
-                                                    @else
-                                                    <button type="button" class="btn btn-warning btn-edit-subs" data-subs-id="{{ $items->subscriptionId }}">
-                                                        <i class="bi bi-pencil-square"></i>
-                                                    </button>
-                                                    <a class="btn btn-success"
-                                                         href="{{ route ('tryout',$application->applicationId) }}">
-                                                         Tryout
-                                                        <i class="bi bi-link"></i>
-                                                     </a>
-                                                    @endif
                                                     <a class="btn btn-danger btn-deletesubs"
                                                         href="{{ route ('deletesubscription',$items->subscriptionId) }}">
                                                         <i class="bi bi-trash3"></i>
                                                     </a>
+                                                    @elseif($items->status == 'ON_HOLD')
+                                                    <button type="button" class="btn btn-warning btn-edit-subs" data-subs-id="{{ $items->subscriptionId }}" disabled>
+                                                        <i class="bi bi-pencil-square"></i>
+                                                    </button>
+                                                    <a class="btn btn-danger btn-deletesubs"
+                                                        href="{{ route ('deletesubscription',$items->subscriptionId) }}">
+                                                        <i class="bi bi-trash3"></i>
+                                                    </a>
+                                                    @elseif($items->status == 'UNBLOCKED')
+                                                    <button type="button" class="btn btn-warning btn-edit-subs" data-subs-id="{{ $items->subscriptionId }}">
+                                                        <i class="bi bi-pencil-square"></i>
+                                                    </button>
+                                                    <a class="btn btn-danger btn-deletesubs"
+                                                        href="{{ route ('deletesubscription',$items->subscriptionId) }}">
+                                                        <i class="bi bi-trash3"></i>
+                                                    </a>
+                                                    <a class="btn btn-success"
+                                                        href="{{ route ('tryout',$application->applicationId) }}">
+                                                        Tryout
+                                                        <i class="bi bi-link"></i>
+                                                    </a>
+                                                    @endif
                                             </td>
                                             </tr>
                                             @endforeach
