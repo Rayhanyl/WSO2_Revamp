@@ -95,8 +95,14 @@
                                                         <p data-toggle="tooltip" data-placement="left" title="Waiting for approval from admin"> 
                                                             {{$items->status}} 
                                                         </p>
+                                                    @elseif($items->status == 'REJECTED')
+                                                        <p data-toggle="tooltip" data-placement="left" title="Rejected"> 
+                                                            {{$items->status}} 
+                                                        </p>
                                                     @else
-                                                        {{$items->status}} 
+                                                        <p data-toggle="tooltip" data-placement="left" title="Approved"> 
+                                                            {{$items->status}} 
+                                                        </p>
                                                     @endif
                                                 </td>
                                                 <td>
