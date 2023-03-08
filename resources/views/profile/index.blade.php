@@ -7,8 +7,10 @@
         <div class="page-content">
             <div class="row">
                 <div class="card">
-                    <div class="card-body">
-                        <h1>Coming Soon!</h1>
+                    <div class="card-body row">
+                        <div class="col-12 col-lg-6">
+                            
+                        </div>
                     </div>
                 </div>
             </div>
