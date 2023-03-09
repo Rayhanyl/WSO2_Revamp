@@ -73,7 +73,6 @@
                                 <ul class="dropdown-menu dropdown-menu-end shadow-lg"
                                     aria-labelledby="topbarUserDropdown">
                                     <li><a class="dropdown-item" href="{{ route ('profile') }}">My Account</a></li>
-                                    <li><a class="dropdown-item" href="#">Settings</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>

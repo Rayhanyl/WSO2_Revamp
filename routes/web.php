@@ -65,6 +65,7 @@ Route::middleware(['haslogin'])->group(function () {
     Route::post('/Accesstoken' ,[ManageKeysController::class, 'generateaccesstoken'])->name('accesstoken');
     Route::post('/ApiKeys' ,[ManageKeysController::class, 'genapikey'])->name('genapikey');
     Route::get('/Profile',[ProfileController::class, 'profile'])->name('profile');
+    Route::post('/ChangePassword',[ProfileController::class, 'changepassword'])->name('changepassword');
 
 
     Route::get('/Logout', [AuthenticationController::class, 'logout'])->name('logout');  

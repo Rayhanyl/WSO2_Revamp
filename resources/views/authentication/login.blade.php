@@ -51,20 +51,14 @@
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                    <div class="col-sm-12 text-end">
-                                        <small class="text-muted">
-                                            <a href="{{ route ('forget') }}">
-                                                Forget Password?
-                                            </a>
-                                        </small>
-                                    </div>
                                     <div class="col-sm-12 mb-3 @error('password') is-invalid @enderror">
                                         <h6>Password :</h6>
                                         <div class="form-group position-relative has-icon-right">
                                             <input type="password" class="form-control round" name="password" id="password"
                                                 placeholder="Password">
                                             <div class="form-text">We'll never share your password with
-                                                anyone else.</div>
+                                                anyone else.
+                                            </div>
                                             <div class="form-control-icon">
                                                 <i id="toggle-password" onclick="togglePassword()" class="bi bi-eye"></i>
                                             </div>
@@ -84,6 +78,15 @@
                                         <a href="{{ route ('register') }}">
                                             <span>Create an account</span>
                                         </a>
+                                    </p>
+                                    <p class="text-center"> 
+                                        <small>
+                                            <span>Forgot your password?</span>
+                                            <a class="fw-bold" href="{{ route ('forget') }}">
+                                                <span>Click Here!</span>
+                                            </a>
+                                        </small>
+                                    </p>
                                     </p>
                                 </div>
                             </div>
