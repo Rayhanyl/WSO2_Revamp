@@ -122,6 +122,11 @@
                         button.addEventListener("click", function() {
                             download(JSON.parse(FileJson), "ENROLLMENT-AAS.postman_collection_viaWSO2.json", "text/plain");
                         });
+                    }else if(typesource == "MARKDOWN"){
+                        const markdownText = $('#data-markdown').html();
+                        const converter = new showdown.Converter();
+                        const htmlText = converter.makeHtml(markdownText);
+                            document.getElementById("markdown-content").innerHTML = htmlText;
                     }
                 },
                 complete: function() {
@@ -133,7 +138,6 @@
                 },
             });
         });
-
     </script>
 @endpush
 @endsection

@@ -55,6 +55,7 @@
 <script src="{{asset ('assets/js/pages/dashboard.js')}}"></script>
 <script src="https://unpkg.com/swagger-ui-dist@4.5.0/swagger-ui-bundle.js" crossorigin></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script src="{{ asset ('assets/showdown/showdown.min.js') }}"></script>
 @include('sweetalert::alert')
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>

@@ -9,7 +9,7 @@
                 <div class="card">
                     <div class="card-body row">
                         <div class="col-12 col-lg-6">
-                            
+
                         </div>
                     </div>
                 </div>
@@ -17,4 +17,7 @@
         </div>
     </div>
 </div>
+
 @endsection
+
+
