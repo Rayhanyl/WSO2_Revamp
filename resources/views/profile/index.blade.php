@@ -18,12 +18,7 @@
                 <div class="col-12 col-lg-8">
                     <div class="card">
                         <div class="card-body row">
-                            <div class="col-12 col-lg-4">
-                                <img class="img-thumbnail rounded-circle mx-auto d-block text-capitalize" width="130" height="130"
-                                src="https://avatar.oxro.io/avatar.svg?name={{ session('firstname') }} {{ session('lastname') }}&background=670bb2&color=000"
-                                alt="Application Picture">
-                            </div>
-                            <div class="col-12 col-lg-8">
+                            <div class="col-12 col-lg-12">
                                 <h4 class="text-capitalize">{{ session('firstname') }} {{ session('lastname') }}</h4>
                                 <p>{{ session('email') }}</p> 
                                 <p>{{ session('phone') }}</p>                               
@@ -54,13 +49,9 @@
                     </div>
                 </div>
                 <div class="col-12 col-lg-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <img class="rounded mx-auto d-block" width="280" height="280"
-                            src="{{ asset ('assets/images/samples/profile.png') }}"
-                            alt="Application Picture">
-                        </div>
-                    </div>
+                    <img class="rounded mx-auto d-block" width="280" height="280"
+                    src="{{ asset ('assets/images/samples/profile.png') }}"
+                    alt="Application Picture">
                 </div>
             </div>
         </div>

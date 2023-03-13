@@ -105,7 +105,7 @@
         </section>
         <section id="testimonial">
             <div style="margin-top: 5em; margin-bottom:5em;">
-                <div class="divider" data-aos="zoom-out" data-aos-duration="1300">
+                <div class="divider" data-aos="zoom-out" data-aos-duration="800">
                     <div class="divider-text fw-bold bg-transparent">
                         <h4>Testimonials</h4>    
                     </div>
@@ -173,7 +173,7 @@
         </section>
         <section id="client">
             <div style="margin-top: 5em;">
-                <div class="divider" data-aos="flip-left" data-aos-duration="1800">
+                <div class="divider" data-aos="flip-left" data-aos-duration="800">
                     <div class="divider-text fw-bold bg-transparent">
                         <h4>Our Partners</h4>    
                     </div>
