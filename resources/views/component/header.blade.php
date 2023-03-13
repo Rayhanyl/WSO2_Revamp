@@ -99,7 +99,7 @@
                             <li class="menu-item">
                                 <a type="button" href="{{ route ('landingpage') }}" class='menu-link reset-local-storage'>
                                     <i class="bi bi-grid-1x2-fill"></i>
-                                    <span>Landing Page</span>
+                                    <span>Home page</span>
                                 </a>
                             </li>
                             <li class="menu-item">
@@ -110,25 +110,10 @@
                             </li>
                             @if (getToken())
                             <li class="menu-item">
-                                <a type="button" href="{{ route ('dashboard') }}" class='menu-link reset-local-storage'>
-                                    <i class="bi bi-grid-fill"></i>
-                                    <span>Dashboard</span>
-                                </a>
-                            </li>
-                            <li class="menu-item  has-sub">
-                                <a href="#" class='menu-link'>
+                                <a type="button" href="{{ route ('application') }}" class='menu-link reset-local-storage'>
                                     <i class="bi bi-stack"></i>
-                                    <span>My Application</span>
+                                    <span>Application</span>
                                 </a>
-                                <div class="submenu ">
-                                    <div class="submenu-group-wrapper">
-                                        <ul class="submenu-group">
-                                            <li class="submenu-item">
-                                                <a type="button" href="{{ route ('application') }}" class='submenu-link reset-local-storage'>Application</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
                             </li>
                             @endif
                         </ul>

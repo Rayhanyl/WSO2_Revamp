@@ -8,7 +8,7 @@
     <div class="page-content">
         <section id="application">
             <div class="row" id="list-application">
-                <div class="col-12">
+                {{-- <div class="col-12">
                     <h5>
                         <i class="bi bi-yelp"></i> Over View
                     </h5>
@@ -52,6 +52,26 @@
                             </div>
                         </div>
                       </div>
+                </div> --}}
+                <div class="col-12" data-aos="fade-right" data-aos-duration="2000">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12 col-lg-8">
+                                    <h4 class="text-capitalize"> Welcome {{ session('firstname') }} {{ session('lastname') }} !</h4>
+                                    <p class="word-break p-2">Explore our API gallery and find out how our API fit to your business case.</p>
+                                    <a href="{{ route ('overview') }}" class="btn btn-primary rounded-pill">Overview <i class="bi bi-chevron-double-right"></i></a>
+                                </div>
+                                <div class="col-12 col-lg-4 d-none d-sm-none d-md-none d-lg-block my-2">
+                                    <div class="img-mazer ">
+                                        <img class="w-50" src="assets/images/samples/man-with-laptop-light.png"
+                                            alt="profile">
+                                    </div>
+                                    {{-- <img class="w-50" src="assets/images/samples/man-with-laptop-light.png" alt="profile"> --}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-12">
                     <div class="card">
@@ -65,10 +85,28 @@
                                     <a href="{{ route ('createapplication') }}" class="btn btn-success rounded-pill">Create
                                         Application <i class="bi bi-plus-circle"></i></a>
                                 </div>
-                                <div class="img-mazer col-12 col-lg-4 d-none d-sm-none d-md-none d-lg-block">
-                                    <img class="w-50" src="assets/images/samples/man-with-laptop-light.png"
-                                        alt="profile">
+                                <div class="col-12 col-lg-4 d-none d-sm-none d-md-none d-lg-block">
+                                    <div class="card bg-dark">
+                                        <div class="card-body px-2 py-2-3">
+                                            <div class="row">
+                                                <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-center ">
+                                                    <div class="stats-icon blue mb-2">
+                                                        <i class="iconly-boldProfile"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
+                                                    <h6 class="text-muted font-semibold">
+                                                        <a href="#" class="text-secondary">
+                                                            Applicattion
+                                                        </a>
+                                                    </h6>
+                                                    <h6 class="font-extrabold mb-0">{{ $data->count }}</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>

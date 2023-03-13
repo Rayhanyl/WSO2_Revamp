@@ -12,6 +12,11 @@ class ApplicationController extends Controller
         $this->url = getUrlApi();
     }
 
+    public function overview(){
+
+        return view('application.overview');
+    }
+
     public function application(Request $request){
         
         if (session('token') == null) {

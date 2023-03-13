@@ -40,6 +40,7 @@ Route::get('/ResultDocumentation', [DocumentationController::class, 'resultdocum
 
 Route::middleware(['haslogin'])->group(function () { 
     Route::get('/Dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+    Route::get('/Overview', [ApplicationController::class, 'overview'])->name('overview');
     Route::get('/Application', [ApplicationController::class, 'application'])->name('application');
     Route::get('/CreateApplication', [ApplicationController::class, 'createapplication'])->name('createapplication');
     Route::post('/StoreApplication', [ApplicationController::class, 'storeapplication'])->name('storeapplication');

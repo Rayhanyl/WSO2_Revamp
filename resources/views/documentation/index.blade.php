@@ -16,31 +16,33 @@
         <section id="application">
                 <div class="row">
                     <div class="col-12 col-lg-3 list-documentation">
-                        <div class="select-api">
-                            <h5>Select API :</h5>
-                            <form action="#" method="GET">
-                                <select class="form-select" aria-label="List API Documentation" name="api-id" id="api-id" required>
-                                    <option selected>-- Select --</option>
-                                    @foreach ($listapipublish as $items)
-                                    <option value="{{$items->id}}">{{$items->name}}</option>
-                                    @endforeach
-                                </select>
-                                <div class="d-grid gap-2 my-2">
-                                    <button class="btn btn-primary btn-sm rounded-pill" type="submit" id="find-document">Find Documentation API <i class="bi bi-search"></i></button>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="list-documentation-api my-4">
-                            <div class="overflow-auto" style="max-height:500px;">
-                                <div class="d-flex justify-content-center" id="loader">
-                                </div>
-                                <div class="content-documentation" id="content-documentation">
+                        <div class="sticky-lg-top" style="top: 30px">
+                            <div class="select-api">
+                                <h5>Select API :</h5>
+                                <form action="#" method="GET">
+                                    <select class="form-select" aria-label="List API Documentation" name="api-id" id="api-id" required>
+                                        <option selected>-- Select --</option>
+                                        @foreach ($listapipublish as $items)
+                                        <option value="{{$items->id}}">{{$items->name}}</option>
+                                        @endforeach
+                                    </select>
+                                    <div class="d-grid gap-2 my-2">
+                                        <button class="btn btn-primary btn-sm rounded-pill" type="submit" id="find-document">Find Documentation API <i class="bi bi-search"></i></button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="list-documentation-api my-4">
+                                <div class="overflow-auto" style="max-height:500px;">
+                                    <div class="d-flex justify-content-center" id="loader">
+                                    </div>
+                                    <div class="content-documentation" id="content-documentation">
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-12 col-lg-8">
-                        <div class="overflow-auto" style="max-height:700px;">
+                        <div>
                             <div id="document-result">
     
                             </div>
